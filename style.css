@@ -5,17 +5,26 @@ body {
     justify-content: center;
    
 }
+
 .container{
+    background: #004D99;
     display: grid;
     grid-template-columns: 100%;
     height:auto;
     width: auto;
     border: solid 1px brown;
+    border-radius: 5px;
 }
 .section{
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+.tituloT{
+    background:#004D99;
+    color:#FFFFFF;
+    font-size: 50px;
 }
 .fechas{
     display: grid;
