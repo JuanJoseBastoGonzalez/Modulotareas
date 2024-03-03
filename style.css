@@ -1,47 +1,126 @@
+*{
+    margin: 0;
+
+}
 
 body {
-    display: flex;
-    align-items: center;
+    display: grid;
+    /* align-items: center;
     justify-content: center;
-   
+    color:white;
+    
+    */
+    background: #E8E8E8;
+}
+
+.nav{
+    display:flex;
+    width: 100%;
+    background: #2c2828;
+    height: 50px;
+    z-index: 999999;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tareasT{
+    color: #F5C147;
+    margin-left:  50px;
+    background: none;
 }
 
 .container{
-    background: #004D99;
+    align-content: center;
+    margin:  0% auto;
+    background: #3b3a39;
     display: grid;
     grid-template-columns: 100%;
     height:auto;
-    width: auto;
-    border: solid 1px brown;
+    width: 800px;
+    gap:10px;
+    border: solid 1px rgb(4, 43, 61);
     border-radius: 5px;
+    color:white
 }
+
 .section{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background: none;
 }
+
 .tituloT{
-    background:#004D99;
-    color:#FFFFFF;
+    background: none;
+    color: #F5C147;
+    
     font-size: 50px;
 }
+
 .fechas{
     display: grid;
     grid-template-columns: 40% 40% ;
-    gap:60px;
-    
-    
+    justify-content: center;
+    gap:150px;
+    margin: auto auto;  
+    font-size: 25px;  
 }
+
 .nombreTarea{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 90%;
-
+    color:#fff;
+    background:rgba(0, 0, 0, 0.5);
 }
 
+.info{
+    font-size: 20px;
+}
 
+.resto{
+    background:rgba(0, 0, 0, 0.5);
+    width: 400px;
+}
+
+.information{
+    border-top: 3px solid rgb(10, 9, 9);
+    margin-top: 10px;
+    height: 50px; 
+}
+
+.tareasP{
+    margin-top: 25px ;
+}
+
+.lista{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.chekY:hover{
+    background: rgb(81, 255, 12);
+}
+
+.chekY{
+    transition: 0.25s;
+    background: rgba(81, 255, 12, 0.335);
+}
+
+.chekN:hover{
+    background: rgb(255, 12, 12);
+}
+
+.chekN{
+    transition: 0.25s;
+    background: rgba(255, 12, 12, 0.335);
+}
+
+.fa-regular{
+    font-size: 25px
+}
 
 
 

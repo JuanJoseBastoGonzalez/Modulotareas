@@ -3,57 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/16d365cb18.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" async></script>
     <title>Document</title>
 </head>
 <body>
+    <div class="nav">
+        <section class="tareasT">MODULO DE TAREAS </section>
+
+       
+    </div>
+    <br>
+
     <div class="pagina">
         <div class="container">
             <section class="section tituloT">
-                <samp class="titulo">Tarea</samp>
+                <samp class="titulo">Tareas</samp>
             </section>
             <section class="section">
-                <input type="text" class="nombreTarea">
+                <input type="text" id="task"class="nombreTarea">
             </section>
             <section class="section"></section>
                 <div class="fechas">
-                    <section class="fechaInicio">
-                        <p>fecha de inico </p>
-                        <input type="date">
+                    <section >
+                        <p >fecha de inico </p>
+                        <input id="date1" type="date">
                     </section>
-                    <section class="fechaFin">
-                        <p>fecha de fin </p>
-                        <input type="date">
+                    <section>
+                        <p >fecha de fin </p>
+                        <input id ="date2" type="date">
                     </section>
                 </div>
-            <section class="section">
+            <section class="section information">
                 <div class="">
-                    <samp>resto</samp>
-                    <input type="text">
+                    <samp class="info">resto</samp>
+                    <input type="file" class="resto">
                 </div>
             </section>
             <section class="section">
-                <div>
+                <div class="prioridad">
                     <section class="">
                         <samp>Nivel de prioridad</samp>
                     </section>
-                    <section class="">
-                        <button>alto</button>
-                        <button>bajo</button>
+                    <section >
+                        <button id="priorityUp">alto</button>
+                        <button id="priorityDown">bajo</button>
                     </section>
                 </div>
             </section>
         </div>
 
 
-        <div class="container">
-            <section class="titulo">
+        <div class="container tareasP">
+            <div class="titulo">
                 <p>Tareas Pendientes</p>
-            </section>
-            <section class="lista">
-                
-            </section>
+            </div>
+            <div id="lista" class="lista">
+               <section class="titleTask">1</section>
+               <section class="dateTaskI">1</section>
+               <section class="dateTaskF">1</section>
+               <section >
+                    <button class="chekY" id="chekY"><i class="fa-regular fa-circle-check" style="color: #000000;"></i></button>
+                    <button class="chekN" id="chekN" ><i class="fa-regular fa-circle-xmark" style="color: #000000;"></i></button>
+                    
+               </section>
+            </div>
+        
             <!-- <button onclick="openDialog()">Abrir Ventana de Diálogo</button>
 
             <div id="dialog" class="dialog-overlay">
