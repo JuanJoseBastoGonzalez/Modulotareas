@@ -78,34 +78,40 @@ document.getElementById('priorityDown').addEventListener('click', function() {
         console.error('Error:', error);
       });
   });
-  const url = 'http://localhost:3000/prioridad'
-// dataUp.forEach(Element=>{
-//     const tareasp = document.getElementById("lista")
-//     tareasp.innerHTML+=
-//     g
 
-// });
-url.alta.forEach(element => {
+document.getElementById('priorityDown').addEventListener('click', function() {
     const url = 'http://localhost:3000/prioridad';
-    
-    const tareasp = document.getElementById("lista");
-    const addCodeTask =document.getElementById("lista")
-    addCodeTask.innerHTML+= `
-    <section class="titleTask">${Element.nombre}</section>
-    <section class="dateTaskI">${element.}</section>
-    <section class="dateTaskF">1</section>
-    <section >
-         <button class="chekY" id="chekY"><i class="fa-regular fa-circle-check" style="color: #000000;"></i></button>
-         <button class="chekN" id="chekN" ><i class="fa-regular fa-circle-xmark" style="color: #000000;"></i></button>
-         
-    </section>
-    
-    `;
-    data.alta
-
-});
-
-
+  
+    // Realizar una solicitud GET para obtener los datos actuales del servidor
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al obtener los datos del servidor');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Iterar sobre la lista "alta" en los datos obtenidos y generar el HTML dinámicamente
+        data.baja.forEach(element => {
+         const  addCodeTask = document.getElementById("lista");
+          addCodeTask.innerHTML += `
+          <section>
+            <section class="titleTask">${element.nombre}</section>
+            <section class="dateTaskI">${element.dateStart}</section>
+            <section class="dateTaskF">${element.dateFinish}</section>
+            <section>
+              <button class="chekY" id="chekY"><i class="fa-regular fa-circle-check" style="color: #000000;"></i></button>
+              <button class="chekN" id="chekN"><i class="fa-regular fa-circle-xmark" style="color: #000000;"></i></button>
+            </section>
+        </section>
+          `;
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+  
 
 
 
