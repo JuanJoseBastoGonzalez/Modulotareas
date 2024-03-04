@@ -78,82 +78,105 @@ document.getElementById('priorityDown').addEventListener('click', function() {
         console.error('Error:', error);
       });
   });
+
+
+
+
+
+
+//   const url="http://localhost:3000/prioridad"
+//   const getTask = async() => {
+//     try {
+//         const respuesta = await fetch(url);
+//         // Si la respuesta es correcta
+//         if(respuesta.status === 200){
+//             const datos = await respuesta.json();
+//             console.log(datos);
+//             return(datos);
+//         } else if(respuesta.status === 401){
+//             console.log('La url no es correcta');
+//         } else if(respuesta.status === 404){
+//             console.log('no existe la tarea');
+//         } else {
+//             console.log('Se presento un error en la peticion consulte al Administrador');
+//         } 
+//     } catch(error){ 
+//         console.log(error);
+//     }
+
+// }
+
+
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   document.getElementById("pulsar").addEventListener("click", function() {
+  //     const link = "./data.json";
+  //     const add = document.getElementById(`lista`);
+  //     fetch(link)
+  //       .then(response => {
+  //         if (!response.ok) {
+  //           throw new Error('No se pudo obtener los datos del servidor.');
+  //         }
+  //         return response.json();
+  //       })
+  //       .then(data => {
+  //         console.log(data);            	
+  //         add.innerHTML += `
+  //           <section class="titleTask">l</section>
+  //           <section class="dateTaskI">l</section>
+  //           <section class="dateTaskF">1</section>
+  //           <section>
+  //             <button class="chekY" id="chekY"><i class="fa-regular fa-circle-check" style="color: #000000;"></i></button>
+  //             <button class="chekN" id="chekN"><i class="fa-regular fa-circle-xmark" style="color: #000000;"></i></button>
+  //           </section>`;
+  //       })
+  //       .catch(error => {
+  //         console.error('Ha ocurrido un error al obtener los datos:', error);
+  //       });
+  //   });
+  // });
   document.addEventListener("DOMContentLoaded", function() {
-    // Tu código JavaScript aquí
     document.getElementById("pulsar").addEventListener("click", function() {
-      const link = "./data.json";
-      const add=document.getElementById(`lista`);
-      fetch(link)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('No se pudo obtener los datos del servidor.');
-          }
-          return response.json();
-        })
-        .then(data => {
-          console.log(data);            	
-          add.innerHTML+=
-
-
-
-          ` <section class="titleTask">1</section>
-    <section class="dateTaskI">1</section>
-    <section class="dateTaskF">1</section>
-    <section >
-          <button class="chekY" id="chekY"><i class="fa-regular fa-circle-check" style="color: #000000;"></i></button>
-          <button class="chekN" id="chekN" ><i class="fa-regular fa-circle-xmark" style="color: #000000;"></i></button>
-          
-    </section>`
-
-
-
-
-          // Aquí imprimes todo el objeto JSON recuperado del servidor
-        })
-        .catch(error => {
-          console.error('Ha ocurrido un error al obtener los datos:', error);
-        });
+        const link = "http://localhost:3000/prioridad";
+        const add = document.getElementById("lista");
+        
+        fetch(link)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('No se pudo obtener los datos del servidor.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);  
+                // Filtrar solo los objetos "alta"
+                const altaData = data.alta;
+                altaData.forEach(item => {
+                    add.innerHTML += `
+                        <section class="titleTask">${item.nombre}</section>
+                        <section class="dateTaskI">${item.dateStart}</section>
+                        <section class="dateTaskF">${item.dateFinish}</section>
+                        <section>
+                            <button class="chekY" id="chekY"><i class="fa-regular fa-circle-check" style="color: #000000;"></i></button>
+                            <button class="chekN" id="chekN"><i class="fa-regular fa-circle-xmark" style="color: #000000;"></i></button>
+                        </section>`;
+                });
+            })
+            .catch(error => {
+                console.error('Ha ocurrido un error al obtener los datos:', error);
+            });
     });
-  });
+});
+
   
-  
-  
 
 
 
 
 
-// fetch('http://localhost:3000/prioridad') 
-//   .then(response => {
-//     if (!response.ok) {
-//       throw new Error('No se pudo obtener los datos del servidor.');
-//     }
-//     return response.json();
-//   }) 
-//   .then(data => {
-//    
-//     if (data && data.prioridad) {
-//    
-//       const elementosAlta = data.prioridad.alta;
-//       console.log("Elementos de prioridad alta:");
-//       elementosAlta.forEach(elemento => {
-//         console.log("Nombre:", elemento.nombre);
-//         console.log("Fecha de inicio:", elemento.dateStart);
-//         console.log("Fecha de finalización:", elemento.dateFinish);
-//         console.log("Prioridad:", elemento.prioridad);
-//         console.log("-----------------------");
-//       });
-//     } else {
-//       console.log("No se encontraron datos de prioridad alta.");
-//     }
-//   })
-//   .catch(error => {
-//     console.error('Ha ocurrido un error al obtener los datos:', error);
-//   });
 
 
 
-      // Mostrar u ocultar la lista dependiendo de si hay tareas o no
+//       // Mostrar u ocultar la lista dependiendo de si hay tareas o no
      
 
     
@@ -168,12 +191,36 @@ document.getElementById('priorityDown').addEventListener('click', function() {
 
 
 
-// Función para abrir la ventana de diálogo
-function openDialog() {
-    document.getElementById('dialog').style.display = 'flex';
-}
+// // Función para abrir la ventana de diálogo
+// function openDialog() {
+//     document.getElementById('dialog').style.display = 'flex';
+// }
 
-// Función para cerrar la ventana de diálogo
-function closeDialog() {
-    document.getElementById('dialog').style.display = 'none';
-}
+// // Función para cerrar la ventana de diálogo
+// function closeDialog() {
+//     document.getElementById('dialog').style.display = 'none';
+// }
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("pulsar").addEventListener("click", function() {
+      const link = "http://localhost:3000"; // URL del servidor JSON
+      const add = document.getElementById("lista");
+      
+      fetch(link)
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('No se pudo obtener los datos del servidor.');
+              }
+              return response.json();
+          })
+          .then(data => {
+              console.log(data); // Imprime los datos devueltos por el servidor JSON
+              // Guarda los datos en un objeto
+              const datosObjeto = data;
+              console.log(datosObjeto); // Imprime el objeto con los datos guardados
+          })
+          .catch(error => {
+              console.error('Ha ocurrido un error al obtener los datos:', error);
+          });
+  });
+});
+
