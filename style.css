@@ -97,6 +97,7 @@ body {
 
 .lista{
     display: grid;
+    height: auto;
     grid-template-columns: 25% 25% 25% 25%;
 }
 
