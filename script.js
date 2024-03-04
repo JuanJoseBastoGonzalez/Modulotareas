@@ -122,19 +122,18 @@ document.getElementById('priorityDown').addEventListener('click', function() {
 
 
 
-// Realizamos una solicitud GET al servidor JSON utilizando fetch
-// // Realizamos una solicitud GET al servidor JSON utilizando fetch
-// fetch('http://localhost:3000/prioridad') // Reemplaza 'tuRuta' por la ruta correcta en la que está sirviendo JSON-Server tus datos
+
+// fetch('http://localhost:3000/prioridad') 
 //   .then(response => {
 //     if (!response.ok) {
 //       throw new Error('No se pudo obtener los datos del servidor.');
 //     }
 //     return response.json();
-//   }) // Convertimos la respuesta a formato JSON
+//   }) 
 //   .then(data => {
-//     // Verificamos si data y data.prioridad existen
+//    
 //     if (data && data.prioridad) {
-//       // Si existen, accedemos a los elementos de prioridad "alta" y los mostramos por consola
+//    
 //       const elementosAlta = data.prioridad.alta;
 //       console.log("Elementos de prioridad alta:");
 //       elementosAlta.forEach(elemento => {
