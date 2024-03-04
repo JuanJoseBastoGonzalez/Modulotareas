@@ -98,7 +98,7 @@ body {
 .lista{
     display: grid;
     height: auto;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 100%;
 }
 
 .chekY:hover{
@@ -122,8 +122,34 @@ body {
 .fa-regular{
     font-size: 25px
 }
-
-
+.listar{
+    display: flex;
+    justify-content: space-between;
+}
+.containerT{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 25px 20px;
+    background:  #3b3a39;
+   
+}
+.tareasT{
+    display: flex;
+    justify-content: center;
+    border: #2c2828 2px solid;
+  
+   
+}
+.onFinish{
+    background:  #3b3a39;
+    display: flex;
+    justify-content: center;
+}
+.offFinish{
+    background:  #3b3a39;
+    display: flex;
+    justify-content: center;
+}
 
      /* Estilos CSS para la ventana de diálogo */
      .dialog-overlay {

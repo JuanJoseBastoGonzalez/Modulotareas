@@ -6,12 +6,6 @@
         "dateStart": "",
         "dateFinish": "",
         "prioridad": "Alta"
-      },
-      {
-        "nombre": "123",
-        "dateStart": "2024-03-06",
-        "dateFinish": "2024-03-12",
-        "prioridad": "Alta"
       }
     ],
     "baja": [
@@ -19,20 +13,6 @@
         "nombre": "",
         "dateStart": "",
         "dateFinish": "",
-        "prioridad": "Baja"
-      },
-      {
-        "nombre": "",
-        "dateStart": "",
-        "dateFinish": "",
-        "prioridad": "Baja"
-      },
-      {
-        "nombre": "hacer tarea",
-        "prioridad": "Baja"
-      },
-      {
-        "nombre": "",
         "prioridad": "Baja"
       }
     ]
